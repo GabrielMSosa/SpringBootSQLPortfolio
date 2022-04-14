@@ -4,9 +4,9 @@
  */
 package com.portfolioSQLimplSpring.portfolioSQLimplSpring.ControllerAPI;
 
+
 import com.portfolioSQLimplSpring.portfolioSQLimplSpring.DTO.IdiomaDTO;
-import com.portfolioSQLimplSpring.portfolioSQLimplSpring.DTO.SkillDTO;
-import com.portfolioSQLimplSpring.portfolioSQLimplSpring.servicioSkill.IServiLeng;
+import com.portfolioSQLimplSpring.portfolioSQLimplSpring.servicioIdioma.IServiIdioma;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,38 +20,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author sosag
+ * @author Voolkia
  */
 @RestController
-public class ControllerLenguaje {
-       @Autowired
-    private IServiLeng servi;
-       
-          
+public class ControllerIdioma {
+    @Autowired
+    private IServiIdioma servi;
+    
+    
+    
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/skills")
-    public String CargarValor1 (@RequestBody SkillDTO dato){
+    @PostMapping("/Idioma")
+    public String CargarValor1 (@RequestBody IdiomaDTO dato){
     
     return servi.crearItem(dato);
         
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/skills/traertodo")
-    public List <SkillDTO>TraerTodo1(){
+    @GetMapping("/Idioma/traertodo")
+    public List <IdiomaDTO>TraerTodo1(){
     
     return servi.traerTodo();
     }
     
   @CrossOrigin(origins = "http://localhost:4200")  
-  @DeleteMapping("/skills/borrar/{id}")    
+  @DeleteMapping("/Idioma/borrar/{id}")    
   public void deleteItem(@PathVariable Long id){
     servi.borrarItem(id);
  
  }
 @CrossOrigin(origins = "http://localhost:4200")  
-@GetMapping("/skills/traer/{id}")    
-  public SkillDTO traerItem(@PathVariable Long id){
+@GetMapping("/Idioma/traer/{id}")    
+  public IdiomaDTO traerItem(@PathVariable Long id){
       System.out.println("entramos  al get por  id de edu");
       return servi.traerPorId(id);
   
@@ -59,9 +60,9 @@ public class ControllerLenguaje {
   
   
  // @CrossOrigin(origins = "http://localhost:4200")
-  @PutMapping("/skills/editar/{id}")
+  @PutMapping("/Idioma/editar/{id}")
  public String editarItem(@PathVariable Long id,
-                        @RequestBody SkillDTO dato
+                        @RequestBody IdiomaDTO dato
             ){
  
       System.out.println("entramos al put");
@@ -69,8 +70,18 @@ public class ControllerLenguaje {
  
  }
 
-       
-       
+  
+  
+  
+  
+     
+     
+    
+    
+    
+    
+    
+    
     
     
 }

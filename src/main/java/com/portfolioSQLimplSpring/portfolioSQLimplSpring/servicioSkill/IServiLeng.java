@@ -4,10 +4,26 @@
  */
 package com.portfolioSQLimplSpring.portfolioSQLimplSpring.servicioSkill;
 
+import com.portfolioSQLimplSpring.portfolioSQLimplSpring.DTO.SkillDTO;
+import java.util.List;
+
 /**
  *
  * @author sosag
  */
 public interface IServiLeng {
+        
+      public List<SkillDTO> traerTodo();
+  
+      public void borrarItem(Long id);
+  
+      public String crearItem(SkillDTO dato);
+  
+      public SkillDTO traerPorId(Long id);
+      
+      public String editarPorid(Long id,SkillDTO dato);
+
+
+    
     
 }

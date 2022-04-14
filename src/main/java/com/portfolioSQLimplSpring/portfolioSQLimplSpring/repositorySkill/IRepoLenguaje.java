@@ -4,10 +4,15 @@
  */
 package com.portfolioSQLimplSpring.portfolioSQLimplSpring.repositorySkill;
 
+import com.portfolioSQLimplSpring.portfolioSQLimplSpring.modelSkill.Lenguaje;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author sosag
  */
-public interface IRepoLenguaje {
+@Repository
+public interface IRepoLenguaje extends JpaRepository<Lenguaje,Long> {
     
 }

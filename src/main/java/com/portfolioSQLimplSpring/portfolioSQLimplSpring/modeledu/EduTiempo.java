@@ -4,12 +4,17 @@
  */
 package com.portfolioSQLimplSpring.portfolioSQLimplSpring.modeledu;
 
+import com.portfolioSQLimplSpring.portfolioSQLimplSpring.modelIdioma.Idioma;
+import com.portfolioSQLimplSpring.portfolioSQLimplSpring.modelexp.ExpeUbi;
 import com.sun.istack.NotNull;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +49,8 @@ public class EduTiempo {
             private String estado;
             @Column(name = "uriim",length = 250)
             private String uriim;
+            
+            
             
             
             

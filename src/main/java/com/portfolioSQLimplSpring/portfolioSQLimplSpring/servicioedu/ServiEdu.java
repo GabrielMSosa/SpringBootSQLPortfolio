@@ -115,6 +115,7 @@ private IRepoUsuario repouser;
     @Override
     public String editarPorid(Long id,EduDTO dato){
     Educacion expe=repoedu.getById(id); //trae por id de la base de datos Experiencia               
+    Long pk1= expe.getEdutiempo().getId();
     EduTiempo et=new EduTiempo();
     expe.setId(id);
     expe.setInstitucion(dato.getInstitucion());
@@ -123,6 +124,7 @@ private IRepoUsuario repouser;
     et.setFechafin(dato.getFechaFin().toString());
     et.setFechaini(dato.getFechaFin().toString());
     et.setUriim(dato.getUriImg());
+    et.setId(pk1);
     
     expe.setEdutiempo(et);
     

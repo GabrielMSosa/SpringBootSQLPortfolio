@@ -4,10 +4,29 @@
  */
 package com.portfolioSQLimplSpring.portfolioSQLimplSpring.servicioIdioma;
 
+import com.portfolioSQLimplSpring.portfolioSQLimplSpring.DTO.IdiomaDTO;
+import java.util.List;
+
 /**
  *
  * @author sosag
  */
 public interface IServiIdioma {
+
+    
+      public List<IdiomaDTO> traerTodo();
+  
+      public void borrarItem(Long id);
+  
+      public String crearItem(IdiomaDTO dato);
+  
+      public IdiomaDTO traerPorId(Long id);
+      
+      public String editarPorid(Long id,IdiomaDTO dato);
+
+
+
+
+
     
 }
