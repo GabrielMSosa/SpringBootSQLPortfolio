@@ -20,6 +20,6 @@ public interface IServiExp {
       public String crearItem(ExpeDTO dato);
   
       public ExpeDTO traerPorId(Long id);
-
+      public String editarPorid(Long id,ExpeDTO dato);
     
 }

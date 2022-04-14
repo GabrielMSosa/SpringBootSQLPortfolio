@@ -69,40 +69,18 @@ public class ControllerExp {
   
   }
   
+
   
-  @CrossOrigin(origins = "http://localhost:4200")
-  @PutMapping("/experiencias/editar/{id}")
- public void editarItem(@PathVariable Long id,
-                       @RequestParam String ntrabajo,
-                       @RequestParam String nempresa,
-                       @RequestParam String ndeltaanio,
-                        @RequestParam Long nfechaFin,
-                        @RequestParam Long nfechaIni,
-                        @RequestParam String nprovincias,
-                        @RequestParam String nuriImg,
-                        @RequestParam String npais,
-                        @RequestParam String nlocalidad
-            ){
+  // @CrossOrigin(origins = "http://localhost:4200")
+   @PutMapping("/experiencias/editar/{id}")
+ public String editarItem(@PathVariable Long id,
+                        @RequestBody ExpeDTO dato ){
  
-      System.out.println("entramos al endpoint put");
- ExpeDTO x= servi.traerPorId(id);
- x.setId(id);
- x.setTrabajo(ntrabajo);
- x.setEmpresa(nempresa);
- x.setDeltaanio(ndeltaanio);
- x.setFechaFin(nfechaFin);
- x.setFechaIni(nfechaIni);
- x.setProvincias(nprovincias);
- x.setUriImg(nuriImg);
- x.setPais(npais);
- x.setLocalidad(nlocalidad);
- 
- servi.crearItem(x);
-      System.out.println("item editado con exito");
+        System.out.println("entramos al put");
+        return servi.editarPorid(id, dato);
  
  }
 
-  
   
   
   

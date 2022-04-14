@@ -126,11 +126,47 @@ public class ServiExp implements IServiExp {
                return x;
     }
 
+    @Override
+public String editarPorid(Long id,ExpeDTO dato){
+
+   Experiencia expe=repoexp.getById(id); //trae por id de la base de datos Experiencia               
+   ExpeTiempo expt=new ExpeTiempo();
+   ExpeUbi exper= new ExpeUbi();
+   Long idpk1=expe.getExpetiempo().getId();
+   Long idpkub=expe.getExpetiempo().getUbi().getId();
+   
+   //-----------------------------------------
+   exper.setId(idpkub);
+   exper.setLocalidad(dato.getLocalidad());
+   exper.setPais(dato.getPais());
+   exper.setProvincia(dato.getProvincias());
+   exper.setUrlimg(dato.getUriImg());
+   //-----------------------------------------
+   expe.setTrabajo(dato.getTrabajo());
+      
+   //-----------------------------------------
+   expt.setDeltaanio(dato.getDeltaanio());
+   expt.setId(idpk1);
+   expt.setEmpresa(dato.getEmpresa());
+   expt.setFechafin(dato.getFechaFin().toString());
+   expt.setFechaini(dato.getFechaIni().toString());
+   expt.setUbi(exper);
+   expe.setExpetiempo(expt);
+   
+   repoexp.save(expe);
+   
+   
+   return "editadoOK";
+   
     
-    
-    
-    
-    
-    
-    
+  
+
 }
+}
+    
+    
+    
+    
+    
+    
+
