@@ -71,7 +71,7 @@ public class ControllerExp {
   
 
   
-  // @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200")
    @PutMapping("/experiencias/editar/{id}")
  public String editarItem(@PathVariable Long id,
                         @RequestBody ExpeDTO dato ){

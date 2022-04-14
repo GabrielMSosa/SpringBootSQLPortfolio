@@ -59,14 +59,14 @@ public class ControllerIdioma {
   }
   
   
- // @CrossOrigin(origins = "http://localhost:4200")
+  @CrossOrigin(origins = "http://localhost:4200")
   @PutMapping("/idioma/editar/{id}")
  public String editarItem(@PathVariable Long id,
                         @RequestBody IdiomaDTO dato
             ){
  
-      System.out.println("entramos al put");
- return servi.editarPorid(id, dato);
+      System.out.println("entramos al put de idioma");
+      return servi.editarPorid(id, dato);
  
  }
 

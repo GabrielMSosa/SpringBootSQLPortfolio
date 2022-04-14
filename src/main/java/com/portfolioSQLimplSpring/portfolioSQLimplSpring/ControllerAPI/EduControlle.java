@@ -70,7 +70,7 @@ public class EduControlle {
   }
   
   
- // @CrossOrigin(origins = "http://localhost:4200")
+ @CrossOrigin(origins = "http://localhost:4200")
   @PutMapping("/educacion/editar/{id}")
  public String editarItem(@PathVariable Long id,
                         @RequestBody EduDTO dato

@@ -58,7 +58,7 @@ public class ControllerLenguaje {
   }
   
   
- // @CrossOrigin(origins = "http://localhost:4200")
+ @CrossOrigin(origins = "http://localhost:4200")
   @PutMapping("/skill/editar/{id}")
  public String editarItem(@PathVariable Long id,
                         @RequestBody SkillDTO dato
