@@ -29,7 +29,7 @@ public class ControllerLenguaje {
        
           
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/skills")
+    @PostMapping("/skill")
     public String CargarValor1 (@RequestBody SkillDTO dato){
     
     return servi.crearItem(dato);
@@ -37,20 +37,20 @@ public class ControllerLenguaje {
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/skills/traertodo")
+    @GetMapping("/skill/traertodo")
     public List <SkillDTO>TraerTodo1(){
     
     return servi.traerTodo();
     }
     
   @CrossOrigin(origins = "http://localhost:4200")  
-  @DeleteMapping("/skills/borrar/{id}")    
+  @DeleteMapping("/skill/borrar/{id}")    
   public void deleteItem(@PathVariable Long id){
     servi.borrarItem(id);
  
  }
 @CrossOrigin(origins = "http://localhost:4200")  
-@GetMapping("/skills/traer/{id}")    
+@GetMapping("/skill/traer/{id}")    
   public SkillDTO traerItem(@PathVariable Long id){
       System.out.println("entramos  al get por  id de edu");
       return servi.traerPorId(id);
@@ -59,7 +59,7 @@ public class ControllerLenguaje {
   
   
  // @CrossOrigin(origins = "http://localhost:4200")
-  @PutMapping("/skills/editar/{id}")
+  @PutMapping("/skill/editar/{id}")
  public String editarItem(@PathVariable Long id,
                         @RequestBody SkillDTO dato
             ){
