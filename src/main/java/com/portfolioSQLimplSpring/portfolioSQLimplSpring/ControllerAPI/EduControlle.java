@@ -42,23 +42,24 @@ public class EduControlle {
     
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/educacion")
-    public String CargarValor1 (@RequestBody EduDTO dato){
-    
-    return servi.crearItem(dato);
+    public void CargarValor1 (@RequestBody EduDTO dato){
+        System.out.println("entramos post educacion");
+    servi.crearItem(dato);
         
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/educacion/traertodo")
     public List <EduDTO>TraerTodo1(){
-    
+        System.out.println("get educacion");
     return servi.traerTodo();
     }
     
   @CrossOrigin(origins = "http://localhost:4200")  
   @DeleteMapping("/educacion/borrar/{id}")    
   public void deleteItem(@PathVariable Long id){
-    servi.borrarItem(id);
+      System.out.println("delete educacuin");
+      servi.borrarItem(id);
  
  }
 @CrossOrigin(origins = "http://localhost:4200")  
@@ -72,12 +73,12 @@ public class EduControlle {
   
  @CrossOrigin(origins = "http://localhost:4200")
   @PutMapping("/educacion/editar/{id}")
- public String editarItem(@PathVariable Long id,
+ public void editarItem(@PathVariable Long id,
                         @RequestBody EduDTO dato
             ){
  
       System.out.println("entramos al put");
- return servi.editarPorid(id, dato);
+ servi.editarPorid(id, dato);
  
  }
 

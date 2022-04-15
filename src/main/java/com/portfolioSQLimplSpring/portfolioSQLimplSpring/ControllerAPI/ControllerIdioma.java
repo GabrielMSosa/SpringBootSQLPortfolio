@@ -31,23 +31,24 @@ public class ControllerIdioma {
     
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/idioma")
-    public String CargarValor1 (@RequestBody IdiomaDTO dato){
-    
-    return servi.crearItem(dato);
+    public void CargarValor1 (@RequestBody IdiomaDTO dato){
+    System.out.println("entramos al post de idioma");
+     servi.crearItem(dato);
         
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/idioma/traertodo")
     public List <IdiomaDTO>TraerTodo1(){
-    
+        System.out.println("se entro al get idioma");
     return servi.traerTodo();
     }
     
   @CrossOrigin(origins = "http://localhost:4200")  
   @DeleteMapping("/idioma/borrar/{id}")    
   public void deleteItem(@PathVariable Long id){
-    servi.borrarItem(id);
+      System.out.println("se borro el idioma");
+      servi.borrarItem(id);
  
  }
 @CrossOrigin(origins = "http://localhost:4200")  
@@ -61,12 +62,12 @@ public class ControllerIdioma {
   
   @CrossOrigin(origins = "http://localhost:4200")
   @PutMapping("/idioma/editar/{id}")
- public String editarItem(@PathVariable Long id,
+ public void editarItem(@PathVariable Long id,
                         @RequestBody IdiomaDTO dato
             ){
  
       System.out.println("entramos al put de idioma");
-      return servi.editarPorid(id, dato);
+       servi.editarPorid(id, dato);
  
  }
 

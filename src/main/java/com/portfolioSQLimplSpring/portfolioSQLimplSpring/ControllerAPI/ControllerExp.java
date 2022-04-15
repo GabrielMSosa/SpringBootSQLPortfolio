@@ -43,29 +43,31 @@ public class ControllerExp {
     
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/experiencias")
-    public String CargarValor (@RequestBody ExpeDTO dato){
-    
-    return  servi.crearItem(dato);
+    public void CargarValor (@RequestBody ExpeDTO dato){
+        System.out.println("post exper");
+    servi.crearItem(dato);
         
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/experiencias/traertodo")
     public List<ExpeDTO>TraerTodo(){
-    
+        System.out.println("get exper");
     return servi.traerTodo();
     }
     
   @CrossOrigin(origins = "http://localhost:4200")  
   @DeleteMapping("/experiencias/borrar/{id}")    
   public void deleteItem(@PathVariable Long id){
-    servi.borrarItem(id);
+      System.out.println("delete expe");
+      servi.borrarItem(id);
  
  }
 @CrossOrigin(origins = "http://localhost:4200")  
 @GetMapping("/experiencias/traer/{id}")    
   public ExpeDTO traerItem(@PathVariable Long id){
-  return servi.traerPorId(id);
+      System.out.println("get expe");
+      return servi.traerPorId(id);
   
   }
   
@@ -73,11 +75,11 @@ public class ControllerExp {
   
    @CrossOrigin(origins = "http://localhost:4200")
    @PutMapping("/experiencias/editar/{id}")
- public String editarItem(@PathVariable Long id,
+ public void editarItem(@PathVariable Long id,
                         @RequestBody ExpeDTO dato ){
  
-        System.out.println("entramos al put");
-        return servi.editarPorid(id, dato);
+            System.out.println("entramos al put expe");
+         servi.editarPorid(id, dato);
  
  }
 

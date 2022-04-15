@@ -27,8 +27,9 @@ public class ControllerUser {
     
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/user/cargar")
-    public String cargarvalores(@RequestBody UserDTO dato){
-    return servi.guardarUser(dato);
+    public void cargarvalores(@RequestBody UserDTO dato){
+        System.out.println("post user");
+        servi.guardarUser(dato);
     
     }
     @CrossOrigin(origins = "http://localhost:4200")
